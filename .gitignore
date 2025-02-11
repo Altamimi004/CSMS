@@ -65,6 +65,7 @@ Thumbs.db
 *.key
 *.pem
 *.crt
+*.der
 /ocpp-logs/
 
 # Documentation generated
