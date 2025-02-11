@@ -1,0 +1,78 @@
+# IDE specific files
+.idea/
+.vscode/
+*.iml
+*.iws
+.settings/
+.project
+.classpath
+
+# Compiled output
+/target/
+/build/
+/dist/
+/out/
+*.class
+
+# Dependencies
+/node_modules/
+/.mvn/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+application-*.properties
+!application-example.properties
+
+# Testing
+/coverage/
+/test-results/
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Database
+*.db
+*.sqlite
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# CSMS specific
+/certificates/
+/keys/
+*.key
+*.pem
+*.crt
+/ocpp-logs/
+
+# Documentation generated
+/docs/generated/
+/javadoc/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~ 

@@ -1,0 +1,86 @@
+<%- include('partials/header', {title: 'OCPP Control'}) %>
+
+<div class="container mt-4">
+    <h2>OCPP Control</h2>
+    
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Connected Chargers
+                </div>
+                <div class="card-body">
+                    <div id="chargersList"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    OCPP Commands
+                </div>
+                <div class="card-body">
+                    <form id="ocppCommandForm">
+                        <div class="mb-3">
+                            <label class="form-label">Charger</label>
+                            <select class="form-control" id="chargerSelect" required>
+                                <option value="">Select Charger</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Command</label>
+                            <select class="form-control" id="commandSelect" required>
+                                <option value="">Select Command</option>
+                                <!-- Core Profile -->
+                                <optgroup label="Core Functions">
+                                    <option value="RemoteStartTransaction">Start Transaction</option>
+                                    <option value="RemoteStopTransaction">Stop Transaction</option>
+                                    <option value="Reset">Reset Charger</option>
+                                    <option value="UnlockConnector">Unlock Connector</option>
+                                    <option value="GetConfiguration">Get Configuration</option>
+                                    <option value="ChangeConfiguration">Change Configuration</option>
+                                    <option value="ClearCache">Clear Cache</option>
+                                    <option value="GetDiagnostics">Get Diagnostics</option>
+                                    <option value="TriggerMessage">Trigger Message</option>
+                                </optgroup>
+                                <!-- Firmware Management -->
+                                <optgroup label="Firmware Management">
+                                    <option value="UpdateFirmware">Update Firmware</option>
+                                    <option value="GetLocalListVersion">Get Local List Version</option>
+                                    <option value="SendLocalList">Send Local List</option>
+                                </optgroup>
+                                <!-- Reservations -->
+                                <optgroup label="Reservations">
+                                    <option value="ReserveNow">Reserve Now</option>
+                                    <option value="CancelReservation">Cancel Reservation</option>
+                                </optgroup>
+                                <!-- Smart Charging -->
+                                <optgroup label="Smart Charging">
+                                    <option value="SetChargingProfile">Set Charging Profile</option>
+                                    <option value="ClearChargingProfile">Clear Charging Profile</option>
+                                    <option value="GetCompositeSchedule">Get Composite Schedule</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        
+                        <div id="commandParams"></div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Command</button>
+                    </form>
+                    
+                    <div class="mt-3">
+                        <h5>Response:</h5>
+                        <pre id="commandResponse" class="bg-light p-2" style="max-height: 200px; overflow-y: auto;"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Socket.IO client script before your ocpp.js -->
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/ocpp.js"></script>
+<%- include('partials/footer') %> 

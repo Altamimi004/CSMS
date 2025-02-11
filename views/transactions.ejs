@@ -1,0 +1,35 @@
+<%- include('partials/header', {title: 'Transactions'}) %>
+
+<div class="container mt-4">
+    <h2>Transactions</h2>
+    <div class="card">
+        <div class="card-body">
+            <div id="loading" class="text-center" style="display: none;">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <div id="errorMessage" class="alert alert-danger" style="display: none;"></div>
+            <table class="table" id="transactionsTable">
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Charger</th>
+                        <th>ID Tag</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Energy (kWh)</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionsTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Add Socket.IO client script before your transactions.js -->
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/transactions.js"></script>
+<%- include('partials/footer') %>

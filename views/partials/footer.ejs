@@ -1,0 +1,14 @@
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/navigation.js"></script>
+    <script>
+        // Initialize Socket.IO with secure connection
+        const socket = io({
+            path: '/socket.io/',
+            transports: ['websocket', 'polling'],
+            secure: true,
+            rejectUnauthorized: false
+        });
+    </script>
+</body>
+</html> 
